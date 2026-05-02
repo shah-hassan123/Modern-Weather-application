@@ -18,15 +18,14 @@ async function checkWeather(city) {
     document.querySelector('.temp').innerHTML = Math.round(data.main.temp) + "°c";
     document.querySelector('.humidity').innerHTML = data.main.humidity + "%";
     
-    // Yahan .wind ka 'w' small hona chahiye (match HTML)
-    document.querySelector('.Wind').innerHTML = data.wind.speed + " km/h";
+    document.querySelector('.wind').innerHTML = data.wind.speed + " km/h";
 
     // Image Change Logic
     const condition = data.weather[0].main;
     if (condition == "Clouds") {
         weatherIcon.src = "images/clouds.png";
     } else if (condition == "Clear") {
-        weatherIcon.src = "images/clear.png"; // Clear condition bhi add kar di
+        weatherIcon.src = "images/clear.png";
     } else if (condition == "Rain") {
         weatherIcon.src = "images/rain.png";
     } else if (condition == "Drizzle") {
